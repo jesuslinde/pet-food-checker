@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>¿Qué puede comer mi perro o gato? Alimentos seguros y tóxicos para mascotas</title>
+<meta name="description" content="Consulta gratis qué alimentos puede comer tu perro o gato y cuáles son tóxicos. Más de 80 alimentos analizados: chocolate, uva, cebolla, aguacate y más. Compara también seguros para mascotas." />
+<meta name="keywords" content="qué puede comer mi perro, alimentos tóxicos para perros, qué puede comer un gato, comida prohibida para perros, alimentos seguros mascotas, seguro perro, seguro gato" />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#2d6a4f" />
+<link rel="canonical" href="/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="¿Qué puede comer mi perro o gato? Buscador de alimentos seguros" />
+<meta property="og:description" content="Descubre al instante si un alimento es seguro, requiere moderación o es tóxico para tu mascota. Base de datos con más de 80 alimentos." />
+<meta property="og:url" content="/" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="¿Puede comerlo mi mascota?" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="¿Qué puede comer mi perro o gato?" />
+<meta name="twitter:description" content="Buscador rápido de alimentos seguros y tóxicos para perros y gatos." />
+
+<!-- Google AdSense — reemplaza ca-pub-XXXXXXXXXXXXXXXX por tu ID real para activar.
+     Mientras el ID sea el placeholder, los slots se ocultan automáticamente (ver JS abajo). -->
+<meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX" />
+<script>
+  window.ADSENSE_CLIENT = "ca-pub-XXXXXXXXXXXXXXXX";
+  window.ADSENSE_ACTIVE = window.ADSENSE_CLIENT && !/X{4,}/.test(window.ADSENSE_CLIENT);
+  if (window.ADSENSE_ACTIVE) {
+    var s = document.createElement("script");
+    s.async = true;
+    s.crossOrigin = "anonymous";
+    s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + window.ADSENSE_CLIENT;
+    document.head.appendChild(s);
+  }
+</script>
+
+<!-- JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"¿Puede comerlo mi mascota?",
+  "url":"/",
+  "inLanguage":"es-ES",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"/?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+
+<!-- JSON-LD: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"¿Puede comerlo mi mascota?",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"Web",
+  "description":"Buscador gratuito de alimentos seguros y tóxicos para perros y gatos, con explicaciones veterinarias y síntomas de intoxicación.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}
+}
+</script>
+
+<!-- JSON-LD: FAQ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"¿Qué alimentos son tóxicos para los perros?","acceptedAnswer":{"@type":"Answer","text":"Los más peligrosos son el chocolate, la uva y las pasas, la cebolla, el ajo, el aguacate, el xilitol, el alcohol, la cafeína, las nueces de macadamia y los huesos cocidos."}},
+    {"@type":"Question","name":"¿Qué puede comer un gato sin problema?","acceptedAnswer":{"@type":"Answer","text":"Los gatos pueden comer pollo cocido, pavo, salmón cocido, huevo cocido, calabaza y pequeñas cantidades de zanahoria o arándanos. Son carnívoros estrictos: su dieta principal debe basarse en proteína animal."}},
+    {"@type":"Question","name":"¿Es obligatorio tener un seguro para perros en España?","acceptedAnswer":{"@type":"Answer","text":"Sí. La Ley de Bienestar Animal obliga a contratar un seguro de responsabilidad civil para perros en toda España."}}
+  ]
+}
+</script>
+
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{
+    --verde:#2d6a4f;
+    --verde-claro:#52b788;
+    --verde-oscuro:#1b4332;
+    --rojo:#c1121f;
+    --rojo-bg:#fde2e4;
+    --amarillo:#f4a261;
+    --amarillo-bg:#fff3cd;
+    --verde-bg:#d8f3dc;
+    --gris:#6c757d;
+    --bg:#f8faf9;
+    --naranja-suave:#fff0e1;
+    --naranja-texto:#8b4513;
+  }
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,sans-serif;
+    background:var(--bg);color:#1b1b1b;line-height:1.55;
+    min-height:100vh;display:flex;flex-direction:column;
+  }
+  header{
+    background:linear-gradient(135deg,var(--verde) 0%,var(--verde-oscuro) 100%);
+    color:#fff;padding:28px 20px 10px;text-align:center;
+  }
+  header h1{margin:0;font-size:1.7rem;font-weight:800;letter-spacing:-0.5px}
+  header p{margin:6px 0 0;opacity:.92;font-size:.95rem}
+  nav.tabs{display:flex;justify-content:center;gap:8px;margin-top:14px}
+  nav.tabs button{
+    background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:12px 12px 0 0;
+    padding:10px 22px;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s;
+    font-family:inherit;
+  }
+  nav.tabs button:hover{background:rgba(255,255,255,.25)}
+  nav.tabs button.active{background:#fff;color:var(--verde-oscuro)}
+  main{flex:1;width:100%;max-width:860px;margin:0 auto;padding:24px 18px 40px}
+  .section-panel{display:none}
+  .section-panel.active{display:block;animation:slideIn .35s ease}
+
+  /* Indexable SEO intro */
+  .intro-seo{
+    background:#fff;border-radius:18px;padding:22px 22px 6px;margin-bottom:24px;
+    box-shadow:0 4px 18px rgba(0,0,0,.05);
+  }
+  .intro-seo h2{font-size:1.25rem;margin:0 0 10px;color:var(--verde-oscuro)}
+  .intro-seo p{margin:0 0 12px;color:#333;font-size:.97rem}
+  .intro-seo .lista-cols{display:grid;grid-template-columns:1fr;gap:14px;margin:14px 0 18px}
+  @media(min-width:560px){.intro-seo .lista-cols{grid-template-columns:1fr 1fr}}
+  .lista-seg,.lista-tox{padding:14px 16px;border-radius:12px;font-size:.93rem}
+  .lista-seg{background:var(--verde-bg);border-left:4px solid var(--verde-claro)}
+  .lista-tox{background:var(--rojo-bg);border-left:4px solid var(--rojo)}
+  .lista-seg strong,.lista-tox strong{display:block;margin-bottom:6px;color:#222}
+
+  /* Pasos */
+  .paso-label{
+    display:inline-block;background:var(--verde);color:#fff;font-size:.78rem;font-weight:700;
+    padding:4px 10px;border-radius:999px;letter-spacing:.4px;margin-bottom:8px;text-transform:uppercase;
+  }
+  h2.paso-title{font-size:1.15rem;margin:0 0 14px;color:var(--verde-oscuro)}
+
+  .pet-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:26px}
+  .pet-btn{
+    background:#fff;border:2px solid #e6e6e6;border-radius:16px;
+    padding:22px 10px;font-size:1.1rem;font-weight:700;cursor:pointer;
+    transition:all .2s;color:#333;display:flex;flex-direction:column;align-items:center;gap:6px;
+    font-family:inherit;
+  }
+  .pet-btn .emoji{font-size:2.2rem}
+  .pet-btn:hover{border-color:var(--verde-claro);transform:translateY(-2px)}
+  .pet-btn.active{background:var(--verde);color:#fff;border-color:var(--verde);box-shadow:0 6px 20px rgba(45,106,79,.25)}
+  .search-wrap{position:relative;margin-bottom:16px}
+  #search{
+    width:100%;padding:16px 18px;font-size:1.05rem;border:2px solid #e0e0e0;
+    border-radius:14px;outline:none;background:#fff;transition:border-color .2s;
+    font-family:inherit;
+  }
+  #search:focus{border-color:var(--verde)}
+  #search:disabled{background:#f0f0f0;cursor:not-allowed}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .chips-title{width:100%;font-size:.85rem;color:var(--gris);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+  .chip{
+    background:#fff;border:1.5px solid #e0e0e0;border-radius:999px;
+    padding:8px 14px;font-size:.9rem;cursor:pointer;color:var(--verde-oscuro);
+    transition:all .15s;font-family:inherit;
+  }
+  .chip:hover{background:var(--verde);color:#fff;border-color:var(--verde)}
+  .results{display:flex;flex-direction:column;gap:12px}
+  .card{
+    background:#fff;border-radius:18px;padding:20px;
+    box-shadow:0 4px 18px rgba(0,0,0,.06);
+    animation:slideIn .35s ease;border-left:6px solid var(--gris);
+  }
+  .card.seguro{border-left-color:var(--verde-claro);background:linear-gradient(180deg,var(--verde-bg) 0%,#fff 60%)}
+  .card.moderacion{border-left-color:var(--amarillo);background:linear-gradient(180deg,var(--amarillo-bg) 0%,#fff 60%)}
+  .card.toxico{border-left-color:var(--rojo);background:linear-gradient(180deg,var(--rojo-bg) 0%,#fff 60%)}
+  .card h3{margin:0 0 8px;font-size:1.25rem;color:var(--verde-oscuro)}
+  .estado{display:inline-block;padding:6px 12px;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:10px;letter-spacing:.3px}
+  .estado.seguro{background:var(--verde-claro);color:#fff}
+  .estado.moderacion{background:var(--amarillo);color:#fff}
+  .estado.toxico{background:var(--rojo);color:#fff}
+  .explicacion{margin:6px 0 0;color:#333}
+  .sintomas{margin-top:12px;padding:10px 12px;background:rgba(193,18,31,.08);border-radius:10px;font-size:.92rem;color:#7a0a13}
+  .sintomas strong{display:block;margin-bottom:4px}
+  .empty{
+    background:#fff;border-radius:18px;padding:24px;text-align:center;color:var(--gris);
+    box-shadow:0 4px 18px rgba(0,0,0,.05);animation:slideIn .35s ease;
+  }
+  .hint{text-align:center;color:var(--gris);font-size:.95rem;padding:18px}
+
+  /* Banner seguros tóxico */
+  .banner-seguros{
+    display:none;margin:18px 0 6px;padding:16px 18px;background:var(--naranja-suave);
+    border-left:5px solid var(--amarillo);border-radius:14px;color:var(--naranja-texto);
+    font-weight:600;font-size:.97rem;animation:slideIn .4s ease;
+  }
+  .banner-seguros.visible{display:block}
+
+  /* AdSense slots */
+  .ad-slot{
+    margin:18px 0;min-height:90px;display:flex;align-items:center;justify-content:center;
+    background:#f1f4f2;border:1px dashed #cfd8d3;border-radius:12px;color:#9aa6a1;
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.6px;overflow:hidden;
+  }
+  .ad-slot ins.adsbygoogle{display:block;width:100%}
+  /* Si AdSense no está activo, ocultamos los slots para no mostrar placeholders feos */
+  body.ads-off .ad-slot{display:none}
+
+  /* Badge "Próximamente" en CTAs de seguros */
+  .seg-soon{
+    position:absolute;top:14px;left:14px;background:#fff3cd;color:#8b6914;
+    font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:999px;
+    letter-spacing:.4px;border:1px solid #f4d97a;
+  }
+  .seg-cta[data-status="proximamente"]{
+    background:#94a89e;cursor:not-allowed;opacity:.85;
+  }
+  .seg-cta[data-status="proximamente"]:hover{background:#94a89e}
+  .seg-cta[data-status="proximamente"]::after{content:" · Próximamente";font-weight:500;opacity:.9}
+
+  /* Seguros - cards modernas */
+  .seguros-title{font-size:1.5rem;font-weight:800;color:var(--verde-oscuro);margin:0 0 6px}
+  .seguros-sub{font-size:.98rem;color:var(--gris);margin:0 0 8px}
+  .seguros-pitch{
+    background:#fff;border-left:4px solid var(--verde-claro);border-radius:12px;
+    padding:14px 16px;margin:14px 0 22px;color:#333;font-size:.95rem;
+  }
+  .seguros-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:18px}
+  @media(min-width:720px){.seguros-grid{grid-template-columns:1fr 1fr}}
+  .seg-card{
+    background:#fff;border-radius:16px;padding:18px 18px 16px;
+    box-shadow:0 6px 22px rgba(0,0,0,.07);
+    display:flex;flex-direction:column;gap:8px;
+    border:2px solid transparent;transition:transform .15s,border-color .15s;position:relative;
+  }
+  .seg-card:hover{transform:translateY(-3px);border-color:var(--verde-claro)}
+  .seg-card.recomendado{border-color:var(--verde);box-shadow:0 8px 28px rgba(45,106,79,.18)}
+  .seg-badge{
+    position:absolute;top:-10px;right:14px;background:var(--verde);color:#fff;
+    font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.5px;
+  }
+  .seg-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .seg-name{font-size:1.2rem;font-weight:800;color:var(--verde-oscuro);margin:0}
+  .seg-precio{font-size:1.15rem;font-weight:800;color:var(--verde)}
+  .seg-precio small{font-size:.75rem;color:var(--gris);font-weight:500}
+  .seg-rating{color:#f4a261;font-size:.95rem;letter-spacing:1px}
+  .seg-features{list-style:none;padding:0;margin:6px 0 4px;display:flex;flex-direction:column;gap:4px;font-size:.9rem;color:#333}
+  .seg-features li{display:flex;align-items:center;gap:6px}
+  .seg-cta{
+    display:block;width:100%;text-align:center;padding:13px 14px;background:var(--verde);
+    color:#fff;border-radius:12px;text-decoration:none;font-weight:700;font-size:1rem;
+    margin-top:8px;transition:background .2s,transform .1s;
+  }
+  .seg-cta:hover{background:var(--verde-oscuro)}
+  .seg-cta:active{transform:scale(.98)}
+  .seg-card.recomendado .seg-cta{background:linear-gradient(135deg,var(--verde) 0%,var(--verde-claro) 100%)}
+  .disclaimer{font-size:.82rem;color:var(--gris);text-align:center;margin-top:12px}
+
+  footer{background:var(--verde-oscuro);color:#dfe9e3;padding:22px 18px;text-align:center;font-size:.85rem;line-height:1.5}
+  footer .afil{display:block;margin-top:8px;opacity:.7;font-size:.78rem}
+  @keyframes slideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @media (min-width:600px){
+    header h1{font-size:2rem}
+    .pet-btn{padding:28px 10px;font-size:1.2rem}
+    .pet-btn .emoji{font-size:2.6rem}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>¿Puede comerlo mi mascota?</h1>
+  <p>Buscador de alimentos seguros y tóxicos para perros y gatos</p>
+  <nav class="tabs" aria-label="Navegación principal">
+    <button class="active" data-tab="alimentos" onclick="switchTab('alimentos')">Alimentos 🍎</button>
+    <button data-tab="seguros" onclick="switchTab('seguros')">Seguros 🛡️</button>
+  </nav>
+</header>
+<main>
+  <!-- SECCIÓN ALIMENTOS -->
+  <section id="panel-alimentos" class="section-panel active">
+
+    <!-- Contenido SEO indexable (HTML estático) -->
+    <article class="intro-seo">
+      <h2>¿Qué puede comer mi perro o gato? Guía rápida de alimentos seguros</h2>
+      <p>Muchos alimentos comunes en casa son <strong>tóxicos para perros y gatos</strong>. El chocolate, la uva, la cebolla o el aguacate pueden provocar intoxicaciones graves en pocas horas. Esta herramienta gratuita te permite consultar al instante si un alimento es <strong>seguro, requiere moderación o está prohibido</strong> para tu mascota, con explicaciones específicas para perros y gatos y los síntomas a vigilar.</p>
+      <div class="lista-cols">
+        <div class="lista-seg">
+          <strong>✅ Alimentos seguros más comunes</strong>
+          Pollo cocido, pavo, salmón cocido, huevo cocido, zanahoria, calabaza, manzana sin semillas, arándanos, arroz cocido, pepino y carne de ternera sin sal.
+        </div>
+        <div class="lista-tox">
+          <strong>❌ Alimentos prohibidos para perros y gatos</strong>
+          Chocolate, uva y pasas, cebolla, ajo, aguacate, xilitol, alcohol, café, nuez de macadamia, huesos cocidos, cebolla, embutidos y leche de vaca.
+        </div>
+      </div>
+      <p>Usa el buscador para consultar más de <strong>80 alimentos analizados</strong>. Recuerda: ante cualquier ingesta sospechosa de un alimento tóxico, contacta de inmediato con tu veterinario.</p>
+    </article>
+
+    <span class="paso-label">Paso 1</span>
+    <h2 class="paso-title">Elige tu mascota</h2>
+    <div class="pet-buttons">
+      <button class="pet-btn" data-pet="perro"><span class="emoji">🐶</span>Perro</button>
+      <button class="pet-btn" data-pet="gato"><span class="emoji">🐱</span>Gato</button>
+    </div>
+
+    <span class="paso-label">Paso 2</span>
+    <h2 class="paso-title">Busca un alimento</h2>
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="Selecciona primero una mascota..." disabled autocomplete="off" aria-label="Buscar alimento" />
+    </div>
+
+    <!-- AdSense A: bajo el buscador (alta intención) -->
+    <div class="ad-slot" data-ad-slot="A-bajo-buscador" aria-hidden="true">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="0000000000"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="chips" id="chips">
+      <span class="chips-title">Más buscados</span>
+    </div>
+
+    <div class="banner-seguros" id="banner-seguros">
+      ⚠️ ¿Tu mascota ha comido algo tóxico? Un seguro cubre las urgencias veterinarias.
+      <a href="#" onclick="switchTab('seguros');track('banner_seguros_click');return false;" style="margin-left:8px;color:var(--verde-oscuro);text-decoration:underline;font-weight:700;">Ver seguros →</a>
+    </div>
+
+    <div class="results" id="results">
+      <p class="hint">Elige una mascota y escribe el nombre de un alimento para empezar.</p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN SEGUROS -->
+  <section id="panel-seguros" class="section-panel">
+    <h2 class="seguros-title">Compara seguros para tu mascota</h2>
+    <p class="seguros-sub">La RC es obligatoria en España desde la Ley de Bienestar Animal.</p>
+    <div class="seguros-pitch">
+      🛡️ <strong>Protege a tu mascota</strong> ante intoxicaciones, accidentes o urgencias veterinarias. Una consulta de urgencias puede costar entre 200€ y 1.500€; un seguro desde <strong>9€/mes</strong> te cubre lo más importante.
+    </div>
+
+    <div class="seguros-grid" id="seguros-grid"></div>
+
+    <!-- AdSense C: en sección seguros (alto valor comercial) -->
+    <div class="ad-slot" data-ad-slot="C-seguros" aria-hidden="true">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="0000000000"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <p class="disclaimer">Los precios son orientativos. Consulta condiciones en cada aseguradora. Algunos enlaces podrán ser de afiliación. Actualmente en preparación.</p>
+  </section>
+</main>
+<footer>
+  Esta web es orientativa. Ante cualquier duda o emergencia, contacta con tu veterinario.
+  <span class="afil">Algunos enlaces podrán ser de afiliación. Actualmente en preparación.</span>
+</footer>
+<script>
+const DATA = {"alimentos":[
+{"nombre":"Manzana","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin semillas ni corazón. Las semillas contienen cianuro. La pulpa es segura en pequeñas cantidades.","explicacion_gato":"Sin semillas ni corazón. Los gatos suelen ignorarla, pero no es tóxica en pequeñas cantidades.","sintomas":""},
+{"nombre":"Uva","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Extremadamente tóxica. Puede causar insuficiencia renal aguda incluso en cantidades pequeñas.","explicacion_gato":"Tóxica. Puede causar insuficiencia renal. Evitar completamente.","sintomas":"Vómitos, diarrea, letargo, pérdida de apetito, dolor abdominal, insuficiencia renal."},
+{"nombre":"Pasa","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Igual de peligrosa que la uva fresca. Incluso más concentrada. Una sola pasa puede ser letal para perros pequeños.","explicacion_gato":"Tóxica. Mismos efectos que la uva.","sintomas":"Vómitos, diarrea, letargo, insuficiencia renal."},
+{"nombre":"Plátano","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Seguro en pequeñas cantidades. Alto en azúcar, no dar a diario.","explicacion_gato":"No tóxico, pero los gatos no necesitan fruta. Ofrecer solo como rareza.","sintomas":""},
+{"nombre":"Sandía","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin semillas ni corteza. La pulpa es hidratante y segura en verano.","explicacion_gato":"Sin semillas. No tóxica pero sin valor nutricional para ellos.","sintomas":""},
+{"nombre":"Aguacate","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Contiene persina, especialmente en la piel y el hueso. La pulpa también puede causar problemas digestivos y cardíacos.","explicacion_gato":"Tóxico. La persina puede causar dificultad respiratoria, acumulación de líquido y daño cardíaco.","sintomas":"Vómitos, diarrea, dificultad para respirar, acumulación de líquido en el tórax."},
+{"nombre":"Fresa","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Segura en pequeñas cantidades. Contiene azúcar natural, no abusar.","explicacion_gato":"No tóxica, pero sin valor para ellos. Pueden ignorarla.","sintomas":""},
+{"nombre":"Cereza","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"El hueso, tallo y hojas contienen cianuro. La pulpa sola es menos peligrosa pero mejor evitar.","explicacion_gato":"Mismos riesgos que en perros. Evitar completamente.","sintomas":"Pupilas dilatadas, dificultad para respirar, shock."},
+{"nombre":"Melocotón","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin hueso. El hueso contiene cianuro. La pulpa fresca en pequeña cantidad es segura.","explicacion_gato":"Sin hueso. No tóxico en pequeñas cantidades.","sintomas":""},
+{"nombre":"Limón","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Los aceites esenciales y el limoneno son tóxicos. La acidez también irrita el sistema digestivo.","explicacion_gato":"Más sensibles aún que los perros. Evitar completamente.","sintomas":"Vómitos, diarrea, temblores, sensibilidad a la luz."},
+{"nombre":"Naranja","seguro_perro":"moderacion","seguro_gato":"toxico","explicacion_perro":"Sin piel ni semillas. La pulpa es segura en pequeñas cantidades, aunque algunos perros la rechazan por la acidez.","explicacion_gato":"Los aceites esenciales de los cítricos son tóxicos para los gatos. Evitar.","sintomas":"En gatos: vómitos, diarrea, depresión."},
+{"nombre":"Mango","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin hueso ni piel. La pulpa es segura ocasionalmente. Alto en azúcar.","explicacion_gato":"No tóxico en cantidad mínima, pero sin valor nutricional para ellos.","sintomas":""},
+{"nombre":"Kiwi","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin piel. En pequeñas cantidades es seguro.","explicacion_gato":"No tóxico pero puede causar malestar digestivo.","sintomas":""},
+{"nombre":"Pera","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin semillas ni corazón. En pequeñas cantidades es segura.","explicacion_gato":"No tóxica en cantidades mínimas.","sintomas":""},
+{"nombre":"Higo","seguro_perro":"moderacion","seguro_gato":"toxico","explicacion_perro":"El látex de la planta del higo es irritante, pero el fruto maduro en pequeña cantidad es seguro.","explicacion_gato":"Puede causar irritación digestiva y cutánea. Mejor evitar.","sintomas":"En gatos: vómitos, diarrea, salivación excesiva."},
+{"nombre":"Arándano","seguro_perro":"seguro","seguro_gato":"moderacion","explicacion_perro":"Considerado un superalimento para perros. Antioxidantes, bajo en calorías. Excelente snack.","explicacion_gato":"No tóxico, pero los gatos no aprovechan sus nutrientes como los perros.","sintomas":""},
+{"nombre":"Frambuesa","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"En pequeñas cantidades. Contiene xilitol natural en muy baja concentración, no preocupante en dosis pequeñas.","explicacion_gato":"No tóxica en cantidad mínima.","sintomas":""},
+{"nombre":"Piña","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin piel ni núcleo. La pulpa fresca en pequeña cantidad es segura. No dar en conserva (azúcar añadida).","explicacion_gato":"No tóxica pero puede irritar el estómago por su acidez.","sintomas":""},
+{"nombre":"Cebolla","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Muy tóxica. Destruye los glóbulos rojos causando anemia hemolítica. Peligrosa cruda, cocida, en polvo o deshidratada.","explicacion_gato":"Aún más sensibles que los perros. Cualquier cantidad es peligrosa.","sintomas":"Vómitos, diarrea, letargo, dificultad para respirar, orina marrón o rojiza, anemia."},
+{"nombre":"Ajo","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"5 veces más tóxico que la cebolla por peso. Incluso pequeñas cantidades repetidas pueden causar anemia.","explicacion_gato":"Extremadamente tóxico. Evitar absolutamente.","sintomas":"Vómitos, diarrea, debilidad, anemia, taquicardia."},
+{"nombre":"Puerro","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"De la misma familia que la cebolla y el ajo. Igualmente tóxico.","explicacion_gato":"Tóxico. Mismos efectos que la cebolla.","sintomas":"Anemia, vómitos, letargo."},
+{"nombre":"Zanahoria","seguro_perro":"seguro","seguro_gato":"moderacion","explicacion_perro":"Excelente snack. Baja en calorías, buena para los dientes. Cruda o cocida, ambas seguras.","explicacion_gato":"No tóxica, pero los gatos son carnívoros estrictos y no la necesitan.","sintomas":""},
+{"nombre":"Brócoli","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"En pequeñas cantidades (menos del 10% de la dieta). En exceso puede causar irritación gastrointestinal.","explicacion_gato":"No tóxico en cantidades mínimas. No tiene valor nutricional relevante para ellos.","sintomas":""},
+{"nombre":"Espinaca","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Contiene oxalatos que en exceso pueden afectar los riñones. En pequeñas cantidades ocasionales es segura.","explicacion_gato":"Mismos riesgos. Evitar en gatos con problemas renales.","sintomas":"En exceso: problemas renales."},
+{"nombre":"Tomate","seguro_perro":"moderacion","seguro_gato":"toxico","explicacion_perro":"El tomate maduro rojo en pequeña cantidad es seguro. Las hojas, tallo y tomate verde contienen solanina, que es tóxica.","explicacion_gato":"Los gatos son más sensibles a la solanina. Mejor evitar completamente.","sintomas":"Solanina: vómitos, diarrea, confusión, debilidad."},
+{"nombre":"Pepino","seguro_perro":"seguro","seguro_gato":"moderacion","explicacion_perro":"Excelente snack de verano. Muy hidratante, bajo en calorías. Seguro sin piel.","explicacion_gato":"No tóxico. Pueden ofrecérselo pero suelen ignorarlo.","sintomas":""},
+{"nombre":"Patata","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Solo cocida y sin piel. Cruda contiene solanina. Sin sal ni condimentos.","explicacion_gato":"Solo cocida, sin piel, sin sal. En pequeñas cantidades.","sintomas":"Patata cruda: vómitos, diarrea."},
+{"nombre":"Boniato","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Cocido y sin piel. Rico en fibra y vitaminas. En pequeñas cantidades.","explicacion_gato":"No tóxico cocido. Sin valor nutricional clave para ellos.","sintomas":""},
+{"nombre":"Maíz","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Los granos sueltos son seguros. Nunca dejar roer la mazorca entera: puede causar obstrucción intestinal.","explicacion_gato":"No tóxico pero difícil de digerir.","sintomas":"Mazorca: obstrucción intestinal (emergencia)."},
+{"nombre":"Guisante","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Frescos o congelados, seguros en pequeñas cantidades. Evitar en perros con problemas renales (purinas).","explicacion_gato":"No tóxicos. Evitar en gatos con enfermedad renal.","sintomas":""},
+{"nombre":"Apio","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Seguro en pequeñas cantidades. Puede actuar como diurético suave.","explicacion_gato":"No tóxico pero puede causar orina frecuente.","sintomas":""},
+{"nombre":"Lechuga","seguro_perro":"seguro","seguro_gato":"moderacion","explicacion_perro":"Segura. Casi sin calorías. Puede ablandar heces si se da en exceso.","explicacion_gato":"No tóxica. Sin valor real para ellos.","sintomas":""},
+{"nombre":"Calabaza","seguro_perro":"seguro","seguro_gato":"seguro","explicacion_perro":"Excelente para digestión. Cocida y sin semillas. Ayuda con estreñimiento y diarrea.","explicacion_gato":"Muy buena para problemas digestivos y bolas de pelo.","sintomas":""},
+{"nombre":"Champiñón (comprado)","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Los champiñones comerciales (portobello, champiñón blanco) son seguros crudos o cocidos sin condimentos.","explicacion_gato":"Los champiñones de supermercado son seguros, pero nunca setas silvestres.","sintomas":""},
+{"nombre":"Seta silvestre","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Muchas setas silvestres son letales. No identificar nunca por cuenta propia. Si tu perro come una seta del campo, ir al veterinario urgente.","explicacion_gato":"Misma alerta. Emergencia veterinaria.","sintomas":"Vómitos, diarrea, convulsiones, fallo hepático, muerte."},
+{"nombre":"Pimiento rojo","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"El rojo es el más seguro. Sin semillas ni tallo. En pequeñas cantidades.","explicacion_gato":"No tóxico pero puede irritar el estómago.","sintomas":""},
+{"nombre":"Pimiento picante / chile","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"La capsaicina irrita las mucosas y el sistema digestivo. Causa dolor real.","explicacion_gato":"Muy sensibles. Evitar absolutamente.","sintomas":"Salivación, vómitos, diarrea, irritación ocular."},
+{"nombre":"Remolacha","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Cocida y en pequeña cantidad. Puede colorear la orina de rojo (inofensivo). Evitar en perros con cálculos renales.","explicacion_gato":"No tóxica en pequeñísimas cantidades.","sintomas":""},
+{"nombre":"Pollo cocido","seguro_perro":"seguro","seguro_gato":"seguro","explicacion_perro":"Sin huesos, sin sal, sin condimentos. Excelente fuente de proteína. Base de muchas dietas caseras.","explicacion_gato":"Perfecto para gatos. Sin huesos ni condimentos.","sintomas":""},
+{"nombre":"Pollo crudo","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Base de la dieta BARF. Riesgo de salmonela si no es de calidad. Los perros tienen acidez estomacal que lo tolera mejor que los humanos.","explicacion_gato":"Similar. Usado en dietas crudas. Riesgo bacteriano si no es fresco.","sintomas":""},
+{"nombre":"Hueso de pollo cocido","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Los huesos cocidos se astillan y pueden perforar el esófago, estómago o intestinos. Muy peligroso.","explicacion_gato":"Mismo peligro. Los huesos cocidos nunca.","sintomas":"Atragantamiento, perforación intestinal (emergencia)."},
+{"nombre":"Hueso de pollo crudo","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"En dieta BARF, los huesos crudos blandos (cuello, alitas) son seguros y buenos para los dientes. Siempre supervisado.","explicacion_gato":"Aceptable en dieta cruda supervisada. Nunca sin vigilancia.","sintomas":""},
+{"nombre":"Carne de ternera cocida","seguro_perro":"seguro","seguro_gato":"seguro","explicacion_perro":"Sin condimentos ni sal. Excelente proteína.","explicacion_gato":"Perfecta. Sin sal ni especias.","sintomas":""},
+{"nombre":"Jamón","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Altísimo en sal y grasa. La sal puede causar toxicidad sódica y la grasa pancreatitis.","explicacion_gato":"Mismo problema. El sodio es especialmente dañino para gatos.","sintomas":"Sed excesiva, vómitos, diarrea, pancreatitis."},
+{"nombre":"Salchicha / embutido","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Exceso de sal, grasa, condimentos y conservantes. Riesgo de pancreatitis y toxicidad sódica.","explicacion_gato":"Demasiado sodio para su tamaño. Evitar completamente.","sintomas":"Vómitos, diarrea, pancreatitis."},
+{"nombre":"Bacon","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Extremadamente graso y salado. Uno de los desencadenantes más comunes de pancreatitis en perros.","explicacion_gato":"Igual de peligroso. Nunca.","sintomas":"Pancreatitis: vómitos, dolor abdominal, fiebre."},
+{"nombre":"Salmón cocido","seguro_perro":"seguro","seguro_gato":"seguro","explicacion_perro":"Sin espinas, sin condimentos. Excelente fuente de omega-3.","explicacion_gato":"Uno de sus favoritos y muy nutritivo. Sin espinas.","sintomas":""},
+{"nombre":"Salmón crudo","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Puede contener un parásito (Neorickettsia helminthoeca) que causa la 'enfermedad del salmón', mortal si no se trata.","explicacion_gato":"Mismo riesgo. Solo salmón cocido o congelado durante al menos 7 días.","sintomas":"Vómitos, diarrea, fiebre, ganglios inflamados, puede ser mortal."},
+{"nombre":"Atún en lata","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Ocasionalmente y en pequeña cantidad. Alto en mercurio y sodio si es en salmuera. Mejor al natural.","explicacion_gato":"Puede crear adicción y desequilibrios nutricionales si se da en exceso. Solo esporádicamente.","sintomas":""},
+{"nombre":"Huevo cocido","seguro_perro":"seguro","seguro_gato":"seguro","explicacion_perro":"Excelente fuente de proteína. Cocido siempre: la clara cruda bloquea la absorción de biotina.","explicacion_gato":"Muy nutritivo. Cocido siempre, nunca crudo.","sintomas":""},
+{"nombre":"Huevo crudo","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"La clara cruda contiene avidina que bloquea la absorción de biotina. El riesgo de salmonela también existe. Mejor cocido siempre.","explicacion_gato":"Mismo problema con la avidina. Cocido es la opción segura.","sintomas":"Déficit de biotina a largo plazo, posible salmonela."},
+{"nombre":"Pavo cocido","seguro_perro":"seguro","seguro_gato":"seguro","explicacion_perro":"Sin piel, sin huesos, sin condimentos. Muy digestivo y bajo en grasa.","explicacion_gato":"Excelente opción. Sin piel ni sal.","sintomas":""},
+{"nombre":"Cerdo cocido","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin condimentos ni sal. En pequeña cantidad. Más graso que el pollo, puede provocar pancreatitis si se abusa.","explicacion_gato":"Sin sal ni especias. Ocasionalmente.","sintomas":"En exceso: pancreatitis."},
+{"nombre":"Cordero cocido","seguro_perro":"seguro","seguro_gato":"seguro","explicacion_perro":"Sin huesos ni condimentos. Buena alternativa para perros con alergias al pollo.","explicacion_gato":"Bien tolerado. Sin sal.","sintomas":""},
+{"nombre":"Conejo cocido","seguro_perro":"seguro","seguro_gato":"seguro","explicacion_perro":"Proteína hipoalergénica, ideal para perros con sensibilidades alimentarias.","explicacion_gato":"Proteína natural para gatos. Muy bien tolerada.","sintomas":""},
+{"nombre":"Gambas cocidas","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin cáscara ni cola. Sin sal. En pequeña cantidad. Frescas, no rebozadas ni fritas.","explicacion_gato":"Sin cáscara, sin sal, sin condimentos. Ocasionalmente.","sintomas":""},
+{"nombre":"Mejillón","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Cocido y sin concha. Rico en omega-3. Sin sal ni salsas.","explicacion_gato":"Cocido. Sin sal. En cantidad pequeña.","sintomas":""},
+{"nombre":"Leche de vaca","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"La mayoría de perros adultos son intolerantes a la lactosa. Causa diarrea y malestar digestivo.","explicacion_gato":"Los gatos adultos no pueden digerir la lactosa. El mito del gato con leche es falso y dañino.","sintomas":"Diarrea, vómitos, gases, malestar abdominal."},
+{"nombre":"Queso","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"En pequeñísima cantidad como premio. Alto en grasa y sal. Los quesos curados son los peores. El requesón es el más tolerado.","explicacion_gato":"Muy poca cantidad. Los gatos no necesitan lácteos y la grasa puede causarles problemas.","sintomas":"En exceso: diarrea, pancreatitis."},
+{"nombre":"Yogur natural","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin azúcar ni edulcorantes. El yogur natural sin lactosa es la mejor opción. Los probióticos pueden ser beneficiosos.","explicacion_gato":"En pequeñísima cantidad. Sin azúcar. No todos lo toleran.","sintomas":""},
+{"nombre":"Arroz cocido","seguro_perro":"seguro","seguro_gato":"moderacion","explicacion_perro":"Blanco, cocido, sin sal. Muy usado para perros con estómago revuelto. Altamente digestivo.","explicacion_gato":"No tóxico pero los gatos no necesitan carbohidratos. En pequeña cantidad.","sintomas":""},
+{"nombre":"Pan","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin valor nutricional. Ocasionalmente un trocito no hace daño. Nunca pan con pasas, ajo o cebolla.","explicacion_gato":"Sin valor para ellos. Evitar el hábito.","sintomas":""},
+{"nombre":"Avena cocida","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin azúcar ni sal. En pequeña cantidad. Buena fuente de fibra soluble.","explicacion_gato":"No tóxica pero sin valor relevante para ellos.","sintomas":""},
+{"nombre":"Nuez","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Las nueces de macadamia son extremadamente tóxicas. Las nueces comunes también pueden causar problemas por su alto contenido en grasa y posibles mohos.","explicacion_gato":"Evitar todas las nueces.","sintomas":"Macadamia: debilidad, hipertermia, vómitos, temblores."},
+{"nombre":"Nuez de macadamia","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Una de las más peligrosas. Incluso 2-3 nueces pueden causar síntomas graves. Emergencia veterinaria.","explicacion_gato":"Tóxica. Evitar completamente.","sintomas":"Debilidad en patas traseras, temblores, fiebre, vómitos, letargo."},
+{"nombre":"Almendra","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"No son tóxicas en sentido estricto pero el sistema digestivo del perro no las procesa bien. Riesgo de obstrucción y pancreatitis.","explicacion_gato":"Mismo problema digestivo. Evitar.","sintomas":"Vómitos, diarrea, gases, potencial obstrucción."},
+{"nombre":"Cacahuete","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin sal, sin azúcar, sin xilitol. La mantequilla de cacahuete natural es un premio popular. Comprobar siempre la etiqueta.","explicacion_gato":"No tóxico pero muy graso. Raramente les interesa.","sintomas":""},
+{"nombre":"Chocolate","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Contiene teobromina y cafeína. Tóxico siempre, más cuanto más negro. El chocolate negro puede ser mortal incluso en pequeñas cantidades para perros pequeños.","explicacion_gato":"Igual de tóxico aunque los gatos raramente lo buscan por no percibir lo dulce.","sintomas":"Vómitos, diarrea, taquicardia, temblores, convulsiones, muerte."},
+{"nombre":"Cacao en polvo","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Concentración de teobromina aún mayor que el chocolate negro. Extremadamente peligroso.","explicacion_gato":"Igualmente tóxico.","sintomas":"Vómitos, convulsiones, fallo cardíaco."},
+{"nombre":"Xilitol","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Edulcorante artificial presente en chicles, caramelos sin azúcar, algunos yogures y mantequillas de cacahuete. Causa hipoglucemia grave y fallo hepático en perros. Uno de los más peligrosos.","explicacion_gato":"También tóxico aunque menos estudiado en gatos.","sintomas":"Hipoglucemia, vómitos, letargo, convulsiones, fallo hepático."},
+{"nombre":"Caramelos / golosinas","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Riesgo de xilitol, azúcar en exceso y otros aditivos. Nunca.","explicacion_gato":"Mismo riesgo. Los gatos no necesitan dulces.","sintomas":"Depende del ingrediente: desde malestar digestivo hasta fallo hepático."},
+{"nombre":"Café","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"La cafeína es tóxica. Incluso pequeñas cantidades pueden causar taquicardia y convulsiones.","explicacion_gato":"Igual de peligroso. Más sensibles por su menor tamaño.","sintomas":"Hiperactividad, taquicardia, temblores, convulsiones."},
+{"nombre":"Té","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Contiene cafeína y teína. Mismos efectos que el café aunque en menor concentración.","explicacion_gato":"Evitar completamente.","sintomas":"Taquicardia, nerviosismo, vómitos."},
+{"nombre":"Alcohol","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"El etanol es tóxico a dosis muy bajas para perros. Incluso una cucharadita puede causar problemas graves.","explicacion_gato":"Igualmente tóxico. Emergencia veterinaria ante cualquier ingesta.","sintomas":"Desorientación, vómitos, dificultad respiratoria, coma."},
+{"nombre":"Sal","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"En exceso causa toxicidad sódica. Sed extrema, retención de líquidos y daño neurológico.","explicacion_gato":"Los riñones del gato son muy sensibles al sodio. Evitar cualquier alimento salado.","sintomas":"Sed extrema, vómitos, diarrea, temblores, convulsiones."},
+{"nombre":"Azúcar","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"No es venenoso puntualmente pero causa obesidad, caries y diabetes a largo plazo. Evitar el hábito.","explicacion_gato":"Los gatos no perciben el dulce y no lo necesitan. Igual de perjudicial.","sintomas":"A largo plazo: obesidad, diabetes, problemas dentales."},
+{"nombre":"Canela","seguro_perro":"moderacion","seguro_gato":"toxico","explicacion_perro":"En pequeñísima cantidad no es tóxica, pero el polvo puede irritar pulmones si se inhala. Sin valor real.","explicacion_gato":"Los aceites esenciales de la canela son tóxicos para los gatos. Evitar.","sintomas":"En gatos: irritación bucal, vómitos, diarrea, problemas hepáticos."},
+{"nombre":"Nuez moscada","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Contiene miristicina, alucinógena y tóxica. Incluso pequeñas cantidades pueden causar convulsiones.","explicacion_gato":"Igual de peligrosa.","sintomas":"Alucinaciones, taquicardia, convulsiones, dolor abdominal."},
+{"nombre":"Aceite de oliva","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"En pequeñísima cantidad puede ser beneficioso para el pelo. En exceso causa diarrea y pancreatitis.","explicacion_gato":"Muy poca cantidad. El exceso de grasa es problemático.","sintomas":"En exceso: diarrea, pancreatitis."},
+{"nombre":"Miel","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"En pequeñísima cantidad. Muy alta en azúcar. No dar a cachorros ni perros diabéticos.","explicacion_gato":"No la necesitan. Evitar en gatos diabéticos u obesos.","sintomas":""},
+{"nombre":"Palomitas","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Solo naturales, sin sal ni mantequilla. Las palomitas de microondas tienen aditivos peligrosos.","explicacion_gato":"Sin sal ni mantequilla. Sin valor nutricional.","sintomas":""},
+{"nombre":"Patatas fritas (chips)","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Exceso de sal, grasa y aditivos. Riesgo de toxicidad sódica y pancreatitis.","explicacion_gato":"Igual de perjudiciales. Nunca.","sintomas":"Sed extrema, vómitos, pancreatitis."},
+{"nombre":"Pizza","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Combinación de ingredientes peligrosos: ajo, cebolla, sal, queso graso. Nunca.","explicacion_gato":"Mismo problema. Demasiados ingredientes tóxicos.","sintomas":"Depende del topping: anemia, pancreatitis, toxicidad sódica."},
+{"nombre":"Huesos de fruta (melocotón, ciruela, albaricoque)","seguro_perro":"toxico","seguro_gato":"toxico","explicacion_perro":"Contienen cianuro. Además pueden causar obstrucción intestinal.","explicacion_gato":"Mismo peligro. Emergencia si los ingiere.","sintomas":"Cianuro: dificultad respiratoria, shock. Obstrucción: emergencia quirúrgica."},
+{"nombre":"Albaricoque","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Solo la pulpa, sin hueso, hojas ni tallo. En pequeña cantidad.","explicacion_gato":"Solo pulpa. Sin hueso. Pequeña cantidad.","sintomas":""},
+{"nombre":"Ciruela","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Solo pulpa sin hueso. El hueso contiene cianuro. Puede tener efecto laxante.","explicacion_gato":"Sin hueso. Puede causar diarrea.","sintomas":"Hueso: cianuro. Pulpa en exceso: diarrea."},
+{"nombre":"Coco","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"La pulpa en pequeña cantidad no es tóxica. El agua de coco tiene mucho potasio. Sin excesos.","explicacion_gato":"No tóxico en cantidad mínima.","sintomas":""},
+{"nombre":"Lentejas cocidas","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Cocidas y sin condimentos. Fuente de fibra y proteína vegetal. No abusar por gases.","explicacion_gato":"No tóxicas pero los gatos no las necesitan.","sintomas":"En exceso: gases, malestar digestivo."},
+{"nombre":"Judías / alubias cocidas","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Cocidas y sin sal. Las crudas contienen fitohemaglutinina, que es tóxica.","explicacion_gato":"Solo cocidas. Sin condimentos.","sintomas":"Crudas: vómitos intensos, diarrea."}
+]};
+
+const POPULARES = ["Chocolate","Uva","Cebolla","Ajo","Aguacate","Zanahoria","Pollo cocido","Arroz cocido","Manzana","Leche de vaca"];
+const ESTADOS = {seguro:"✅ SEGURO", moderacion:"⚠️ CON MODERACIÓN", toxico:"❌ TÓXICO"};
+
+const SEGUROS = [
+  {nombre:"Barkibu", precio:"9", rating:5, rc:true, vet:"Completa", recomendado:true, url:"#"},
+  {nombre:"Santévet", precio:"18", rating:5, rc:true, vet:"Completa", recomendado:false, url:"#"},
+  {nombre:"Caser", precio:"10", rating:4, rc:true, vet:"Parcial", recomendado:false, url:"#"},
+  {nombre:"Agila", precio:"12", rating:4, rc:true, vet:"Completa", recomendado:false, url:"#"},
+  {nombre:"Mapfre", precio:"15", rating:4, rc:true, vet:"Completa", recomendado:false, url:"#"}
+];
+
+// ===== Tracking global =====
+window.track = function(eventName, data){
+  try{
+    console.log("[track]", eventName, data||{});
+    // Hook futuro: GA4, Plausible, etc.
+    if(window.dataLayer){ window.dataLayer.push({event:eventName, ...(data||{})}); }
+  }catch(e){}
+};
+
+let pet = null;
+const $search = document.getElementById("search");
+const $results = document.getElementById("results");
+const $chips = document.getElementById("chips");
+const $bannerSeguros = document.getElementById("banner-seguros");
+const $segurosGrid = document.getElementById("seguros-grid");
+
+function normalize(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function stars(n){return "★".repeat(n) + "☆".repeat(5-n)}
+
+function renderSeguros(){
+  $segurosGrid.innerHTML = SEGUROS.map(s => {
+    const proximamente = !s.url || s.url === "#";
+    const ctaAttrs = proximamente
+      ? `href="#" data-status="proximamente" onclick="track('seguro_click_proximamente',{aseguradora:'${s.nombre}'});return false;"`
+      : `href="${s.url}" target="_blank" rel="sponsored noopener" onclick="track('seguro_click',{aseguradora:'${s.nombre}',precio:${s.precio}})"`;
+    return `
+    <div class="seg-card ${s.recomendado?'recomendado':''}">
+      ${proximamente?'<span class="seg-soon">Próximamente</span>':''}
+      ${s.recomendado?'<span class="seg-badge">★ Recomendado</span>':''}
+      <div class="seg-head">
+        <h3 class="seg-name">${s.nombre}</h3>
+        <span class="seg-precio">${s.precio}€<small>/mes</small></span>
+      </div>
+      <div class="seg-rating" aria-label="Valoración ${s.rating} de 5">${stars(s.rating)}</div>
+      <ul class="seg-features">
+        <li>${s.rc?'✅':'❌'} Responsabilidad Civil incluida</li>
+        <li>🏥 Cobertura veterinaria: <strong>${s.vet}</strong></li>
+        <li>⚡ Protege a tu mascota ante intoxicaciones o urgencias veterinarias</li>
+      </ul>
+      <a class="seg-cta" ${ctaAttrs}>Ver precio →</a>
+    </div>`;
+  }).join("");
+}
+renderSeguros();
+
+function renderChips(){
+  POPULARES.forEach(name=>{
+    const b = document.createElement("button");
+    b.className = "chip"; b.textContent = name;
+    b.onclick = ()=>{
+      track('chip_click',{alimento:name});
+      if(!pet){alert("Elige primero una mascota");return;}
+      $search.value = name; render(name);
+    };
+    $chips.appendChild(b);
+  });
+}
+renderChips();
+
+document.querySelectorAll(".pet-btn").forEach(btn=>{
+  btn.onclick = ()=>{
+    document.querySelectorAll(".pet-btn").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    pet = btn.dataset.pet;
+    track('pet_select',{pet});
+    $search.disabled = false;
+    $search.placeholder = "Escribe un alimento (ej: chocolate, manzana...)";
+    $search.focus();
+    render($search.value);
+  };
+});
+
+let searchTimer;
+$search.addEventListener("input", e => {
+  render(e.target.value);
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(()=>{
+    if(e.target.value.trim()) track('search',{q:e.target.value.trim(), pet});
+  }, 600);
+});
+
+function switchTab(tab){
+  document.querySelectorAll("nav.tabs button").forEach(b=>b.classList.toggle("active", b.dataset.tab===tab));
+  document.querySelectorAll(".section-panel").forEach(p=>p.classList.toggle("active", p.id==="panel-"+tab));
+  track('tab_switch',{tab});
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function adSlotHTML(id){
+  return `<div class="ad-slot" data-ad-slot="B-entre-resultados-${id}" aria-hidden="true">
+    <ins class="adsbygoogle" style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="0000000000"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+  </div>`;
+}
+
+function render(q){
+  if(!pet){return;}
+  q = (q||"").trim();
+  $results.innerHTML = "";
+  let hasToxico = false;
+  if(!q){
+    $results.innerHTML = '<p class="hint">Empieza a escribir para ver resultados.</p>';
+    $bannerSeguros.classList.remove("visible");
+    return;
+  }
+  const nq = normalize(q);
+  const matches = DATA.alimentos.filter(a => normalize(a.nombre).includes(nq));
+  if(matches.length === 0){
+    const div = document.createElement("div");
+    div.className = "empty";
+    div.textContent = "No tenemos este alimento en nuestra base de datos. Consulta siempre con tu veterinario.";
+    $results.appendChild(div);
+    $bannerSeguros.classList.remove("visible");
+    return;
+  }
+  const slice = matches.slice(0,15);
+  slice.forEach((a,i)=>{
+    const estado = pet==="perro" ? a.seguro_perro : a.seguro_gato;
+    const expl = pet==="perro" ? a.explicacion_perro : a.explicacion_gato;
+    const card = document.createElement("div");
+    card.className = "card " + estado;
+    let html = `<h3>${a.nombre}</h3>
+      <span class="estado ${estado}">${ESTADOS[estado]}</span>
+      <p class="explicacion">${expl}</p>`;
+    if(estado === "toxico" && a.sintomas){
+      html += `<div class="sintomas"><strong>Síntomas a vigilar:</strong>${a.sintomas}</div>`;
+    }
+    if(estado === "toxico") hasToxico = true;
+    card.innerHTML = html;
+    card.addEventListener("click", ()=>track('result_click',{alimento:a.nombre,estado,pet}));
+    $results.appendChild(card);
+
+    // Ad-slot entre resultados (cada 4, sin saturar)
+    if((i+1) % 4 === 0 && i < slice.length - 1){
+      const wrap = document.createElement("div");
+      wrap.innerHTML = adSlotHTML(i+1);
+      $results.appendChild(wrap.firstChild);
+    }
+  });
+  $bannerSeguros.classList.toggle("visible", hasToxico);
+}
+
+// Activar AdSense solo si hay ID real. Si no, ocultamos los slots para no romper el diseño.
+if (window.ADSENSE_ACTIVE) {
+  try{
+    document.querySelectorAll("ins.adsbygoogle").forEach(()=>{
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    });
+  }catch(e){}
+} else {
+  document.body.classList.add("ads-off");
+}
+</script>
+</body>
+</html>
