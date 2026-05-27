@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>¿Qué puede comer mi perro o gato? Alimentos seguros y tóxicos para mascotas</title>
-<meta name="description" content="Consulta gratis qué alimentos puede comer tu perro o gato y cuáles son tóxicos. Más de 80 alimentos analizados: chocolate, uva, cebolla, aguacate y más. Compara también seguros para mascotas." />
-<meta name="keywords" content="qué puede comer mi perro, alimentos tóxicos para perros, qué puede comer un gato, comida prohibida para perros, alimentos seguros mascotas, seguro perro, seguro gato" />
+<meta name="description" content="Consulta gratis qué alimentos puede comer tu perro o gato y cuáles son tóxicos. Más de 80 alimentos analizados y mapa de playas para perros en España." />
+<meta name="keywords" content="qué puede comer mi perro, alimentos tóxicos para perros, qué puede comer un gato, comida prohibida para perros, alimentos seguros mascotas, seguro perro, seguro gato, playas para perros España" />
 <meta name="robots" content="index,follow" />
 <meta name="theme-color" content="#2d6a4f" />
 <meta name="google-site-verification" content="9qeSSZ0VGzqJBw7NPZP9J7wARfODhvuc36rCwd_Uero" />
@@ -13,8 +13,8 @@
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="¿Qué puede comer mi perro o gato? Buscador de alimentos seguros" />
-<meta property="og:description" content="Descubre al instante si un alimento es seguro, requiere moderación o es tóxico para tu mascota. Base de datos con más de 80 alimentos." />
+<meta property="og:title" content="¿Qué puede comer mi perro o gato? Buscador + Playas caninas" />
+<meta property="og:description" content="Descubre al instante si un alimento es seguro, requiere moderación o es tóxico. Incluye mapa con todas las playas para perros en España." />
 <meta property="og:url" content="https://petchecker.netlify.app/" />
 <meta property="og:locale" content="es_ES" />
 <meta property="og:site_name" content="¿Puede comerlo mi mascota?" />
@@ -22,10 +22,9 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="¿Qué puede comer mi perro o gato?" />
-<meta name="twitter:description" content="Buscador rápido de alimentos seguros y tóxicos para perros y gatos." />
+<meta name="twitter:description" content="Buscador rápido de alimentos seguros y tóxicos + mapa de playas para perros en España." />
 
-<!-- Google AdSense — reemplaza ca-pub-XXXXXXXXXXXXXXXX por tu ID real para activar.
-     Mientras el ID sea el placeholder, los slots se ocultan automáticamente (ver JS abajo). -->
+<!-- Google AdSense -->
 <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX" />
 <script>
   window.ADSENSE_CLIENT = "ca-pub-XXXXXXXXXXXXXXXX";
@@ -63,7 +62,7 @@
   "name":"¿Puede comerlo mi mascota?",
   "applicationCategory":"HealthApplication",
   "operatingSystem":"Web",
-  "description":"Buscador gratuito de alimentos seguros y tóxicos para perros y gatos, con explicaciones veterinarias y síntomas de intoxicación.",
+  "description":"Buscador gratuito de alimentos seguros y tóxicos para perros y gatos + mapa de playas caninas en España.",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}
 }
 </script>
@@ -76,10 +75,15 @@
   "mainEntity":[
     {"@type":"Question","name":"¿Qué alimentos son tóxicos para los perros?","acceptedAnswer":{"@type":"Answer","text":"Los más peligrosos son el chocolate, la uva y las pasas, la cebolla, el ajo, el aguacate, el xilitol, el alcohol, la cafeína, las nueces de macadamia y los huesos cocidos."}},
     {"@type":"Question","name":"¿Qué puede comer un gato sin problema?","acceptedAnswer":{"@type":"Answer","text":"Los gatos pueden comer pollo cocido, pavo, salmón cocido, huevo cocido, calabaza y pequeñas cantidades de zanahoria o arándanos. Son carnívoros estrictos: su dieta principal debe basarse en proteína animal."}},
-    {"@type":"Question","name":"¿Es obligatorio tener un seguro para perros en España?","acceptedAnswer":{"@type":"Answer","text":"Sí. La Ley de Bienestar Animal obliga a contratar un seguro de responsabilidad civil para perros en toda España."}}
+    {"@type":"Question","name":"¿Es obligatorio tener un seguro para perros en España?","acceptedAnswer":{"@type":"Answer","text":"Sí. La Ley de Bienestar Animal obliga a contratar un seguro de responsabilidad civil para perros en toda España."}},
+    {"@type":"Question","name":"¿Dónde hay playas para perros en España?","acceptedAnswer":{"@type":"Answer","text":"Existen playas caninas habilitadas en todas las comunidades costeras: Andalucía, Comunidad Valenciana, Cataluña, Murcia, Baleares, Canarias, Galicia, Asturias, Cantabria, País Vasco y Ceuta. Muchas son accesibles todo el año, otras solo fuera de temporada alta."}}
   ]
 }
 </script>
+
+<!-- Leaflet (carga diferida del JS) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
 <style>
   *,*::before,*::after{box-sizing:border-box}
@@ -109,15 +113,15 @@
   }
   header h1{margin:0;font-size:1.7rem;font-weight:800;letter-spacing:-0.5px}
   header p{margin:6px 0 0;opacity:.92;font-size:.95rem}
-  nav.tabs{display:flex;justify-content:center;gap:8px;margin-top:14px}
+  nav.tabs{display:flex;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap}
   nav.tabs button{
     background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:12px 12px 0 0;
-    padding:10px 22px;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s;
+    padding:10px 18px;font-size:.92rem;font-weight:700;cursor:pointer;transition:background .2s;
     font-family:inherit;
   }
   nav.tabs button:hover{background:rgba(255,255,255,.25)}
   nav.tabs button.active{background:#fff;color:var(--verde-oscuro)}
-  main{flex:1;width:100%;max-width:860px;margin:0 auto;padding:24px 18px 40px}
+  main{flex:1;width:100%;max-width:960px;margin:0 auto;padding:24px 18px 40px}
   .section-panel{display:none}
   .section-panel.active{display:block;animation:slideIn .35s ease}
 
@@ -153,12 +157,12 @@
   .pet-btn:hover{border-color:var(--verde-claro);transform:translateY(-2px)}
   .pet-btn.active{background:var(--verde);color:#fff;border-color:var(--verde);box-shadow:0 6px 20px rgba(45,106,79,.25)}
   .search-wrap{position:relative;margin-bottom:16px}
-  #search{
+  #search,#playas-search{
     width:100%;padding:16px 18px;font-size:1.05rem;border:2px solid #e0e0e0;
     border-radius:14px;outline:none;background:#fff;transition:border-color .2s;
     font-family:inherit;
   }
-  #search:focus{border-color:var(--verde)}
+  #search:focus,#playas-search:focus{border-color:var(--verde)}
   #search:disabled{background:#f0f0f0;cursor:not-allowed}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
   .chips-title{width:100%;font-size:.85rem;color:var(--gris);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
@@ -168,6 +172,7 @@
     transition:all .15s;font-family:inherit;
   }
   .chip:hover{background:var(--verde);color:#fff;border-color:var(--verde)}
+  .chip.active{background:var(--verde);color:#fff;border-color:var(--verde)}
   .results{display:flex;flex-direction:column;gap:12px}
   .card{
     background:#fff;border-radius:18px;padding:20px;
@@ -199,49 +204,29 @@
   }
   .banner-seguros.visible{display:block}
 
-  /* AdSense slots */
+  /* AdSense */
   .ad-slot{
     margin:18px 0;min-height:90px;display:flex;align-items:center;justify-content:center;
     background:#f1f4f2;border:1px dashed #cfd8d3;border-radius:12px;color:#9aa6a1;
     font-size:.78rem;text-transform:uppercase;letter-spacing:.6px;overflow:hidden;
   }
   .ad-slot ins.adsbygoogle{display:block;width:100%}
-  /* Si AdSense no está activo, ocultamos los slots para no mostrar placeholders feos */
   body.ads-off .ad-slot{display:none}
 
-  /* Badge "Próximamente" en CTAs de seguros */
-  .seg-soon{
-    position:absolute;top:14px;left:14px;background:#fff3cd;color:#8b6914;
-    font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:999px;
-    letter-spacing:.4px;border:1px solid #f4d97a;
-  }
-  .seg-cta[data-status="proximamente"]{
-    background:#94a89e;cursor:not-allowed;opacity:.85;
-  }
+  /* Seguros */
+  .seg-soon{position:absolute;top:14px;left:14px;background:#fff3cd;color:#8b6914;font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:.4px;border:1px solid #f4d97a;}
+  .seg-cta[data-status="proximamente"]{background:#94a89e;cursor:not-allowed;opacity:.85;}
   .seg-cta[data-status="proximamente"]:hover{background:#94a89e}
   .seg-cta[data-status="proximamente"]::after{content:" · Próximamente";font-weight:500;opacity:.9}
-
-  /* Seguros - cards modernas */
   .seguros-title{font-size:1.5rem;font-weight:800;color:var(--verde-oscuro);margin:0 0 6px}
   .seguros-sub{font-size:.98rem;color:var(--gris);margin:0 0 8px}
-  .seguros-pitch{
-    background:#fff;border-left:4px solid var(--verde-claro);border-radius:12px;
-    padding:14px 16px;margin:14px 0 22px;color:#333;font-size:.95rem;
-  }
+  .seguros-pitch{background:#fff;border-left:4px solid var(--verde-claro);border-radius:12px;padding:14px 16px;margin:14px 0 22px;color:#333;font-size:.95rem;}
   .seguros-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:18px}
   @media(min-width:720px){.seguros-grid{grid-template-columns:1fr 1fr}}
-  .seg-card{
-    background:#fff;border-radius:16px;padding:18px 18px 16px;
-    box-shadow:0 6px 22px rgba(0,0,0,.07);
-    display:flex;flex-direction:column;gap:8px;
-    border:2px solid transparent;transition:transform .15s,border-color .15s;position:relative;
-  }
+  .seg-card{background:#fff;border-radius:16px;padding:18px 18px 16px;box-shadow:0 6px 22px rgba(0,0,0,.07);display:flex;flex-direction:column;gap:8px;border:2px solid transparent;transition:transform .15s,border-color .15s;position:relative;}
   .seg-card:hover{transform:translateY(-3px);border-color:var(--verde-claro)}
   .seg-card.recomendado{border-color:var(--verde);box-shadow:0 8px 28px rgba(45,106,79,.18)}
-  .seg-badge{
-    position:absolute;top:-10px;right:14px;background:var(--verde);color:#fff;
-    font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.5px;
-  }
+  .seg-badge{position:absolute;top:-10px;right:14px;background:var(--verde);color:#fff;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.5px;}
   .seg-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
   .seg-name{font-size:1.2rem;font-weight:800;color:var(--verde-oscuro);margin:0}
   .seg-precio{font-size:1.15rem;font-weight:800;color:var(--verde)}
@@ -249,15 +234,29 @@
   .seg-rating{color:#f4a261;font-size:.95rem;letter-spacing:1px}
   .seg-features{list-style:none;padding:0;margin:6px 0 4px;display:flex;flex-direction:column;gap:4px;font-size:.9rem;color:#333}
   .seg-features li{display:flex;align-items:center;gap:6px}
-  .seg-cta{
-    display:block;width:100%;text-align:center;padding:13px 14px;background:var(--verde);
-    color:#fff;border-radius:12px;text-decoration:none;font-weight:700;font-size:1rem;
-    margin-top:8px;transition:background .2s,transform .1s;
-  }
+  .seg-cta{display:block;width:100%;text-align:center;padding:13px 14px;background:var(--verde);color:#fff;border-radius:12px;text-decoration:none;font-weight:700;font-size:1rem;margin-top:8px;transition:background .2s,transform .1s;}
   .seg-cta:hover{background:var(--verde-oscuro)}
   .seg-cta:active{transform:scale(.98)}
   .seg-card.recomendado .seg-cta{background:linear-gradient(135deg,var(--verde) 0%,var(--verde-claro) 100%)}
   .disclaimer{font-size:.82rem;color:var(--gris);text-align:center;margin-top:12px}
+
+  /* Playas */
+  .playas-title{font-size:1.5rem;font-weight:800;color:var(--verde-oscuro);margin:0 0 6px}
+  .playas-sub{font-size:.98rem;color:var(--gris);margin:0 0 14px}
+  #playas-map{height:380px;border-radius:16px;margin:14px 0 18px;box-shadow:0 4px 18px rgba(0,0,0,.08);background:#e9efea}
+  .playas-stats{font-size:.85rem;color:var(--gris);margin:6px 0 14px;font-weight:600}
+  .playas-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:640px){.playas-grid{grid-template-columns:1fr 1fr}}
+  .playa-card{background:#fff;border-radius:16px;padding:16px;box-shadow:0 4px 14px rgba(0,0,0,.06);border-left:5px solid var(--verde-claro);display:flex;flex-direction:column;gap:6px;transition:transform .15s}
+  .playa-card:hover{transform:translateY(-2px)}
+  .playa-card h3{margin:0;font-size:1.05rem;color:var(--verde-oscuro)}
+  .playa-meta{font-size:.85rem;color:var(--gris);margin:0}
+  .playa-desc{font-size:.9rem;color:#333;margin:4px 0 0}
+  .playa-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+  .playa-tag{background:var(--verde-bg);color:var(--verde-oscuro);font-size:.72rem;padding:3px 8px;border-radius:999px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+  .playa-tag.temp{background:var(--amarillo-bg);color:#8b6914}
+  .playa-link{margin-top:8px;display:inline-block;color:var(--verde);font-weight:700;font-size:.88rem;text-decoration:none}
+  .playa-link:hover{text-decoration:underline}
 
   footer{background:var(--verde-oscuro);color:#dfe9e3;padding:22px 18px;text-align:center;font-size:.85rem;line-height:1.5}
   footer .afil{display:block;margin-top:8px;opacity:.7;font-size:.78rem}
@@ -272,17 +271,16 @@
 <body>
 <header>
   <h1>¿Puede comerlo mi mascota?</h1>
-  <p>Buscador de alimentos seguros y tóxicos para perros y gatos</p>
+  <p>Buscador de alimentos seguros y tóxicos · Seguros · Playas para perros en España</p>
   <nav class="tabs" aria-label="Navegación principal">
     <button class="active" data-tab="alimentos" onclick="switchTab('alimentos')">Alimentos 🍎</button>
     <button data-tab="seguros" onclick="switchTab('seguros')">Seguros 🛡️</button>
+    <button data-tab="playas" onclick="switchTab('playas')">Playas 🏖️</button>
   </nav>
 </header>
 <main>
-  <!-- SECCIÓN ALIMENTOS -->
+  <!-- ============ SECCIÓN ALIMENTOS ============ -->
   <section id="panel-alimentos" class="section-panel active">
-
-    <!-- Contenido SEO indexable (HTML estático) -->
     <article class="intro-seo">
       <h2>¿Qué puede comer mi perro o gato? Guía rápida de alimentos seguros</h2>
       <p>Muchos alimentos comunes en casa son <strong>tóxicos para perros y gatos</strong>. El chocolate, la uva, la cebolla o el aguacate pueden provocar intoxicaciones graves en pocas horas. Esta herramienta gratuita te permite consultar al instante si un alimento es <strong>seguro, requiere moderación o está prohibido</strong> para tu mascota, con explicaciones específicas para perros y gatos y los síntomas a vigilar.</p>
@@ -312,14 +310,8 @@
       <input id="search" type="text" placeholder="Selecciona primero una mascota..." disabled autocomplete="off" aria-label="Buscar alimento" />
     </div>
 
-    <!-- AdSense A: bajo el buscador (alta intención) -->
     <div class="ad-slot" data-ad-slot="A-bajo-buscador" aria-hidden="true">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="0000000000"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>
 
     <div class="chips" id="chips">
@@ -336,7 +328,7 @@
     </div>
   </section>
 
-  <!-- SECCIÓN SEGUROS -->
+  <!-- ============ SECCIÓN SEGUROS ============ -->
   <section id="panel-seguros" class="section-panel">
     <h2 class="seguros-title">Compara seguros para tu mascota</h2>
     <p class="seguros-sub">La RC es obligatoria en España desde la Ley de Bienestar Animal.</p>
@@ -346,23 +338,46 @@
 
     <div class="seguros-grid" id="seguros-grid"></div>
 
-    <!-- AdSense C: en sección seguros (alto valor comercial) -->
     <div class="ad-slot" data-ad-slot="C-seguros" aria-hidden="true">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="0000000000"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>
 
     <p class="disclaimer">Los precios son orientativos. Consulta condiciones en cada aseguradora. Algunos enlaces podrán ser de afiliación. Actualmente en preparación.</p>
+  </section>
+
+  <!-- ============ SECCIÓN PLAYAS ============ -->
+  <section id="panel-playas" class="section-panel">
+    <article class="intro-seo">
+      <h2 class="playas-title">🐶 Playas para perros en España</h2>
+      <p class="playas-sub">Mapa interactivo y listado completo de playas caninas oficiales en todas las comunidades costeras: Andalucía, C. Valenciana, Cataluña, Murcia, Baleares, Canarias, Galicia, Asturias, Cantabria, País Vasco y Ceuta. Datos basados en normativa municipal vigente — verifica siempre en el ayuntamiento antes de viajar.</p>
+    </article>
+
+    <div id="playas-map" aria-label="Mapa de playas para perros en España"></div>
+
+    <div class="search-wrap">
+      <input id="playas-search" type="text" placeholder="Busca por playa, provincia o comunidad (ej: Asturias, Málaga...)" autocomplete="off" aria-label="Buscar playa" />
+    </div>
+
+    <div class="chips" id="playas-chips">
+      <span class="chips-title">Filtra por comunidad</span>
+    </div>
+
+    <div class="ad-slot" data-ad-slot="D-playas" aria-hidden="true">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <p class="playas-stats" id="playas-stats"></p>
+    <div class="playas-grid" id="playas-grid"></div>
   </section>
 </main>
 <footer>
   Esta web es orientativa. Ante cualquier duda o emergencia, contacta con tu veterinario.
   <span class="afil">Algunos enlaces podrán ser de afiliación. Actualmente en preparación.</span>
 </footer>
+
+<!-- JSON-LD playas (ItemList se inyecta dinámicamente) -->
+<script id="playas-jsonld" type="application/ld+json"></script>
+
 <script>
 const DATA = {"alimentos":[
 {"nombre":"Manzana","seguro_perro":"moderacion","seguro_gato":"moderacion","explicacion_perro":"Sin semillas ni corazón. Las semillas contienen cianuro. La pulpa es segura en pequeñas cantidades.","explicacion_gato":"Sin semillas ni corazón. Los gatos suelen ignorarla, pero no es tóxica en pequeñas cantidades.","sintomas":""},
@@ -467,11 +482,104 @@ const SEGUROS = [
   {nombre:"Mapfre", precio:"15", rating:4, rc:true, vet:"Completa", recomendado:false, url:"#"}
 ];
 
-// ===== Tracking global =====
+/* =========================================================================
+   PLAYAS PARA PERROS EN ESPAÑA — Dataset completo
+   ========================================================================= */
+const PLAYAS = [
+  /* ANDALUCÍA */
+  {nombre:"Playa del Castillo (Torre del Mar)",provincia:"Málaga",comunidad:"Andalucía",lat:36.7397,lng:-4.0883,servicios:["duchas","papeleras","parking"],temporada:"todo el año",desc:"Tramo habilitado señalizado. Zona de baño canino consolidada."},
+  {nombre:"Playa Canina de Fuengirola (San Francisco)",provincia:"Málaga",comunidad:"Andalucía",lat:36.5404,lng:-4.6263,servicios:["duchas","papeleras","parking","accesible"],temporada:"todo el año",desc:"Una de las más completas de la Costa del Sol, con duchas para perros."},
+  {nombre:"Playa de Arroyo Totalán",provincia:"Málaga",comunidad:"Andalucía",lat:36.7197,lng:-4.3214,servicios:["papeleras","parking"],temporada:"todo el año",desc:"Tramo del Rincón de la Victoria habilitado para perros."},
+  {nombre:"Playa de Riviera del Sol",provincia:"Málaga",comunidad:"Andalucía",lat:36.5083,lng:-4.7250,servicios:["papeleras"],temporada:"todo el año",desc:"Mijas Costa. Acceso libre con correa."},
+  {nombre:"Playa de Cabopino (Artola)",provincia:"Málaga",comunidad:"Andalucía",lat:36.4889,lng:-4.7444,servicios:["chiringuito","parking"],temporada:"fuera de temporada alta",desc:"Tramo dunar; restricciones en julio y agosto."},
+  {nombre:"Playa de Poniente (Almería)",provincia:"Almería",comunidad:"Andalucía",lat:36.8290,lng:-2.4670,servicios:["duchas","papeleras","parking"],temporada:"todo el año",desc:"Playa canina señalizada en la capital."},
+  {nombre:"Playa de Las Salinas (Roquetas)",provincia:"Almería",comunidad:"Andalucía",lat:36.7503,lng:-2.6478,servicios:["papeleras","parking"],temporada:"todo el año",desc:"Zona habilitada junto a las salinas."},
+  {nombre:"Playa de Mónsul",provincia:"Almería",comunidad:"Andalucía",lat:36.7494,lng:-2.1908,servicios:["parking"],temporada:"fuera de temporada alta",desc:"Cabo de Gata; restricciones en verano por protección natural."},
+  {nombre:"Playa de Salinas-Quitapellejos",provincia:"Almería",comunidad:"Andalucía",lat:37.2392,lng:-1.7672,servicios:["parking"],temporada:"todo el año",desc:"Palomares. Espacio tranquilo apto para perros."},
+  {nombre:"Playa de Camposoto (sector sur)",provincia:"Cádiz",comunidad:"Andalucía",lat:36.4242,lng:-6.2522,servicios:["parking","papeleras"],temporada:"todo el año",desc:"San Fernando. Último tramo habilitado todo el año."},
+  {nombre:"Playa del Castillo (El Puerto)",provincia:"Cádiz",comunidad:"Andalucía",lat:36.5867,lng:-6.2333,servicios:["papeleras"],temporada:"todo el año",desc:"Tramo canino estable en El Puerto de Santa María."},
+  {nombre:"Playa de Levante (El Puerto)",provincia:"Cádiz",comunidad:"Andalucía",lat:36.5750,lng:-6.2375,servicios:["parking"],temporada:"fuera de temporada alta",desc:"Libre acceso fuera de junio-septiembre."},
+  {nombre:"Playa de Torreguadiaro",provincia:"Cádiz",comunidad:"Andalucía",lat:36.2906,lng:-5.2700,servicios:["papeleras"],temporada:"fuera de temporada alta",desc:"San Roque. Acceso libre fuera del verano."},
+  {nombre:"Playa del Puntalejo",provincia:"Huelva",comunidad:"Andalucía",lat:37.2167,lng:-7.3500,servicios:["parking"],temporada:"todo el año",desc:"Isla Cristina. Tramo habilitado."},
+  {nombre:"Playa de la Bota",provincia:"Huelva",comunidad:"Andalucía",lat:37.1639,lng:-6.7861,servicios:["parking"],temporada:"todo el año",desc:"Punta Umbría. Larga playa abierta."},
+
+  /* COMUNIDAD VALENCIANA */
+  {nombre:"Pluja de Cans (Pinedo)",provincia:"Valencia",comunidad:"C. Valenciana",lat:39.4017,lng:-0.3158,servicios:["duchas","papeleras","parking","accesible"],temporada:"todo el año",desc:"Playa canina oficial de Valencia ciudad."},
+  {nombre:"Playa Canina de Gandía (L'Ahuir)",provincia:"Valencia",comunidad:"C. Valenciana",lat:39.0008,lng:-0.1539,servicios:["papeleras","parking"],temporada:"todo el año",desc:"Zona dunar amplia, sin paseo marítimo."},
+  {nombre:"Playa Canina de Dénia (Les Deveses)",provincia:"Alicante",comunidad:"C. Valenciana",lat:38.8917,lng:0.1083,servicios:["parking"],temporada:"todo el año",desc:"Tramo señalizado al norte del término."},
+  {nombre:"Playa de Agua Amarga (Alicante)",provincia:"Alicante",comunidad:"C. Valenciana",lat:38.3056,lng:-0.5083,servicios:["papeleras","parking"],temporada:"todo el año",desc:"Zona habilitada al sur de la ciudad."},
+  {nombre:"Playa Canina de El Campello",provincia:"Alicante",comunidad:"C. Valenciana",lat:38.4253,lng:-0.3958,servicios:["duchas","papeleras"],temporada:"todo el año",desc:"Espacio canino con duchas y aparcamiento."},
+  {nombre:"Playa Canina de Pilar de la Horadada",provincia:"Alicante",comunidad:"C. Valenciana",lat:37.8628,lng:-0.7625,servicios:["duchas","papeleras","parking","accesible"],temporada:"todo el año",desc:"Una de las playas caninas mejor valoradas del Levante."},
+  {nombre:"Playa Canina de Torrevieja (Cala del Moro)",provincia:"Alicante",comunidad:"C. Valenciana",lat:37.9760,lng:-0.6790,servicios:["papeleras"],temporada:"todo el año",desc:"Cala pequeña habilitada."},
+  {nombre:"Playa de la Concha (Oropesa)",provincia:"Castellón",comunidad:"C. Valenciana",lat:40.0833,lng:0.1417,servicios:["papeleras","parking"],temporada:"fuera de temporada alta",desc:"Tramo canino fuera de verano."},
+  {nombre:"Playa del Gurugú (Castellón)",provincia:"Castellón",comunidad:"C. Valenciana",lat:39.9772,lng:0.0397,servicios:["parking"],temporada:"todo el año",desc:"Tramo de Pinar habilitado para perros."},
+  {nombre:"Playa de Almenara",provincia:"Castellón",comunidad:"C. Valenciana",lat:39.7400,lng:-0.1875,servicios:["parking"],temporada:"todo el año",desc:"Casablanca. Largo tramo natural."},
+
+  /* CATALUÑA */
+  {nombre:"Platja de Llevant (Barcelona)",provincia:"Barcelona",comunidad:"Cataluña",lat:41.4047,lng:2.2253,servicios:["duchas","papeleras","accesible"],temporada:"todo el año",desc:"Única playa canina oficial de Barcelona ciudad."},
+  {nombre:"Platja de la Rubina",provincia:"Girona",comunidad:"Cataluña",lat:42.2483,lng:3.1339,servicios:["parking"],temporada:"todo el año",desc:"Castelló d'Empúries. Espacio natural amplio."},
+  {nombre:"Platja del Gola del Ter",provincia:"Girona",comunidad:"Cataluña",lat:42.0344,lng:3.1925,servicios:["parking"],temporada:"todo el año",desc:"Torroella de Montgrí. Zona natural habilitada."},
+  {nombre:"Platja del Cavaió (Arenys)",provincia:"Barcelona",comunidad:"Cataluña",lat:41.5719,lng:2.5719,servicios:["papeleras"],temporada:"todo el año",desc:"Tramo canino en Arenys de Mar."},
+  {nombre:"Platja de la Picòrdia",provincia:"Barcelona",comunidad:"Cataluña",lat:41.5639,lng:2.5500,servicios:["papeleras"],temporada:"todo el año",desc:"Arenys de Mar, junto al puerto."},
+  {nombre:"Platja del Far (Vilanova i la Geltrú)",provincia:"Barcelona",comunidad:"Cataluña",lat:41.2147,lng:1.7300,servicios:["parking"],temporada:"todo el año",desc:"Zona canina señalizada."},
+  {nombre:"Platja de l'Estany Gelat",provincia:"Tarragona",comunidad:"Cataluña",lat:40.7611,lng:0.7472,servicios:["parking"],temporada:"todo el año",desc:"Delta del Ebro. Espacio natural."},
+  {nombre:"Platja del Riu Sec (Cambrils)",provincia:"Tarragona",comunidad:"Cataluña",lat:41.0625,lng:1.0667,servicios:["duchas","papeleras"],temporada:"todo el año",desc:"Playa canina oficial de Cambrils."},
+  {nombre:"Platja del Miracle (Tarragona)",provincia:"Tarragona",comunidad:"Cataluña",lat:41.1133,lng:1.2547,servicios:["papeleras"],temporada:"fuera de temporada alta",desc:"Tramo permitido fuera de verano."},
+
+  /* MURCIA */
+  {nombre:"Playa Canina de Bolnuevo",provincia:"Murcia",comunidad:"Murcia",lat:37.5594,lng:-1.4083,servicios:["duchas","papeleras","parking"],temporada:"todo el año",desc:"Mazarrón. Playa canina amplia."},
+  {nombre:"Playa Canina de Calblanque",provincia:"Murcia",comunidad:"Murcia",lat:37.6056,lng:-0.7297,servicios:["parking"],temporada:"fuera de temporada alta",desc:"Parque Regional. Restricciones en verano."},
+  {nombre:"Playa Canina de Águilas (La Carolina)",provincia:"Murcia",comunidad:"Murcia",lat:37.3956,lng:-1.5797,servicios:["papeleras","parking"],temporada:"todo el año",desc:"Tramo habilitado todo el año."},
+  {nombre:"Playa de las Palmeras (San Pedro)",provincia:"Murcia",comunidad:"Murcia",lat:37.8047,lng:-0.7625,servicios:["papeleras"],temporada:"todo el año",desc:"San Pedro del Pinatar."},
+
+  /* BALEARES */
+  {nombre:"Es Carnatge (Palma)",provincia:"Mallorca",comunidad:"Baleares",lat:39.5494,lng:2.7344,servicios:["parking"],temporada:"todo el año",desc:"Zona costera rocosa apta para perros."},
+  {nombre:"Platja de S'Aigo Dolça",provincia:"Mallorca",comunidad:"Baleares",lat:39.5083,lng:3.2667,servicios:["parking"],temporada:"todo el año",desc:"Cala pequeña permitida."},
+  {nombre:"Cala Estància (canina)",provincia:"Mallorca",comunidad:"Baleares",lat:39.5475,lng:2.7256,servicios:["papeleras"],temporada:"fuera de temporada alta",desc:"Restricciones en verano."},
+  {nombre:"Platja de Llevant (Formentera)",provincia:"Formentera",comunidad:"Baleares",lat:38.7197,lng:1.4658,servicios:[],temporada:"todo el año",desc:"Tramo señalizado al sur de Es Caló."},
+  {nombre:"Cala Pluma (Menorca)",provincia:"Menorca",comunidad:"Baleares",lat:39.8083,lng:4.2125,servicios:[],temporada:"todo el año",desc:"Pequeña cala admitida."},
+
+  /* CANARIAS */
+  {nombre:"Playa del Cabrón (Arinaga)",provincia:"Gran Canaria",comunidad:"Canarias",lat:27.8556,lng:-15.3833,servicios:["parking"],temporada:"todo el año",desc:"Zona habitual para perros, ideal para snorkel."},
+  {nombre:"Playa de Vargas",provincia:"Gran Canaria",comunidad:"Canarias",lat:27.8417,lng:-15.4083,servicios:["parking"],temporada:"todo el año",desc:"Playa de surf donde los perros son habituales."},
+  {nombre:"Playa de La Garita (canina)",provincia:"Gran Canaria",comunidad:"Canarias",lat:28.1175,lng:-15.4111,servicios:["papeleras"],temporada:"todo el año",desc:"Tramo canino en Telde."},
+  {nombre:"Playa del Hombre",provincia:"Gran Canaria",comunidad:"Canarias",lat:28.0667,lng:-15.4083,servicios:["parking"],temporada:"todo el año",desc:"Telde. Acceso libre con correa."},
+  {nombre:"Playa de Almáciga",provincia:"Tenerife",comunidad:"Canarias",lat:28.5778,lng:-16.1853,servicios:["parking"],temporada:"todo el año",desc:"Anaga. Playa salvaje no urbana."},
+  {nombre:"Playa de Benijo",provincia:"Tenerife",comunidad:"Canarias",lat:28.5783,lng:-16.1722,servicios:["parking"],temporada:"todo el año",desc:"Arena negra, entorno protegido."},
+  {nombre:"Playa de la Jaquita",provincia:"Tenerife",comunidad:"Canarias",lat:28.0833,lng:-16.7972,servicios:["papeleras"],temporada:"todo el año",desc:"Tramo no urbano apto para perros."},
+  {nombre:"Playa de Cofete",provincia:"Fuerteventura",comunidad:"Canarias",lat:28.0833,lng:-14.3833,servicios:[],temporada:"todo el año",desc:"Playa salvaje de 12 km, sin restricciones."},
+
+  /* GALICIA */
+  {nombre:"Praia Canina de Area Bastiana",provincia:"Pontevedra",comunidad:"Galicia",lat:42.6500,lng:-8.8833,servicios:["parking"],temporada:"todo el año",desc:"Boiro. Playa canina habilitada."},
+  {nombre:"Praia de Os Cerqueiros",provincia:"A Coruña",comunidad:"Galicia",lat:43.0944,lng:-9.1872,servicios:[],temporada:"todo el año",desc:"Costa da Morte. Playa salvaje."},
+  {nombre:"Praia de Reira",provincia:"A Coruña",comunidad:"Galicia",lat:43.0167,lng:-9.2167,servicios:["parking"],temporada:"todo el año",desc:"Carnota. Playa amplia y poco masificada."},
+  {nombre:"Praia de Combouzas",provincia:"A Coruña",comunidad:"Galicia",lat:43.3000,lng:-8.5667,servicios:["parking"],temporada:"todo el año",desc:"Arteixo. Habitual para perros."},
+  {nombre:"Praia Canina de Lourido",provincia:"Pontevedra",comunidad:"Galicia",lat:42.4081,lng:-8.8467,servicios:["papeleras","parking"],temporada:"todo el año",desc:"Portonovo. Tramo canino oficial."},
+
+  /* ASTURIAS */
+  {nombre:"Playa de Verdicio (canina)",provincia:"Asturias",comunidad:"Asturias",lat:43.6219,lng:-5.8233,servicios:["parking"],temporada:"todo el año",desc:"Tramo habilitado en Gozón."},
+  {nombre:"Playa de Bañugues",provincia:"Asturias",comunidad:"Asturias",lat:43.6386,lng:-5.7733,servicios:["parking"],temporada:"fuera de temporada alta",desc:"Permitido fuera del verano."},
+  {nombre:"Playa de Frexulfe",provincia:"Asturias",comunidad:"Asturias",lat:43.5667,lng:-6.7833,servicios:[],temporada:"todo el año",desc:"Navia. Playa natural protegida."},
+  {nombre:"Playa de Vega (canina)",provincia:"Asturias",comunidad:"Asturias",lat:43.4631,lng:-5.1314,servicios:["parking"],temporada:"todo el año",desc:"Ribadesella. Tramo canino al este."},
+
+  /* CANTABRIA */
+  {nombre:"Playa de la Arena (Isla)",provincia:"Cantabria",comunidad:"Cantabria",lat:43.5083,lng:-3.5500,servicios:["parking"],temporada:"fuera de temporada alta",desc:"Arnuero. Permitido fuera de verano."},
+  {nombre:"Playa de Berria (canina)",provincia:"Cantabria",comunidad:"Cantabria",lat:43.4839,lng:-3.4639,servicios:["parking"],temporada:"todo el año",desc:"Santoña. Tramo habilitado."},
+  {nombre:"Playa de Oyambre",provincia:"Cantabria",comunidad:"Cantabria",lat:43.3833,lng:-4.3333,servicios:["parking"],temporada:"fuera de temporada alta",desc:"Parque natural; restricciones en verano."},
+
+  /* PAÍS VASCO */
+  {nombre:"Playa de Saturraran",provincia:"Gipuzkoa",comunidad:"País Vasco",lat:43.3208,lng:-2.4378,servicios:["parking"],temporada:"fuera de temporada alta",desc:"Mutriku. Permitido fuera del verano."},
+  {nombre:"Playa de Murgita (Hondarribia)",provincia:"Gipuzkoa",comunidad:"País Vasco",lat:43.3833,lng:-1.8000,servicios:["parking"],temporada:"todo el año",desc:"Pequeño tramo habilitado."},
+  {nombre:"Playa de Arrigorri (Ondarroa)",provincia:"Bizkaia",comunidad:"País Vasco",lat:43.3231,lng:-2.4189,servicios:["papeleras"],temporada:"fuera de temporada alta",desc:"Acceso libre fuera de temporada alta."},
+  {nombre:"Playa de La Arena (Muskiz, canina)",provincia:"Bizkaia",comunidad:"País Vasco",lat:43.3492,lng:-3.1281,servicios:["parking"],temporada:"todo el año",desc:"Tramo canino señalizado."},
+
+  /* CEUTA */
+  {nombre:"Playa de Benítez (canina)",provincia:"Ceuta",comunidad:"Ceuta",lat:35.8950,lng:-5.3367,servicios:["papeleras"],temporada:"todo el año",desc:"Tramo habilitado para perros."}
+];
+
+// ===== Tracking =====
 window.track = function(eventName, data){
   try{
-    console.log("[track]", eventName, data||{});
-    // Hook futuro: GA4, Plausible, etc.
     if(window.dataLayer){ window.dataLayer.push({event:eventName, ...(data||{})}); }
   }catch(e){}
 };
@@ -483,7 +591,7 @@ const $chips = document.getElementById("chips");
 const $bannerSeguros = document.getElementById("banner-seguros");
 const $segurosGrid = document.getElementById("seguros-grid");
 
-function normalize(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function normalize(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
 function stars(n){return "★".repeat(n) + "☆".repeat(5-n)}
 
 function renderSeguros(){
@@ -553,6 +661,7 @@ function switchTab(tab){
   document.querySelectorAll(".section-panel").forEach(p=>p.classList.toggle("active", p.id==="panel-"+tab));
   track('tab_switch',{tab});
   window.scrollTo({top:0,behavior:"smooth"});
+  if(tab==="playas") initPlayas();
 }
 
 function adSlotHTML(id){
@@ -601,8 +710,6 @@ function render(q){
     card.innerHTML = html;
     card.addEventListener("click", ()=>track('result_click',{alimento:a.nombre,estado,pet}));
     $results.appendChild(card);
-
-    // Ad-slot entre resultados (cada 4, sin saturar)
     if((i+1) % 4 === 0 && i < slice.length - 1){
       const wrap = document.createElement("div");
       wrap.innerHTML = adSlotHTML(i+1);
@@ -612,7 +719,123 @@ function render(q){
   $bannerSeguros.classList.toggle("visible", hasToxico);
 }
 
-// Activar AdSense solo si hay ID real. Si no, ocultamos los slots para no romper el diseño.
+/* =================== PLAYAS =================== */
+let playasMap = null, playasMarkers = [], leafletLoaded = false, playasInitialized = false;
+let playasFiltroComunidad = "";
+const $playasSearch = document.getElementById("playas-search");
+const $playasGrid = document.getElementById("playas-grid");
+const $playasChips = document.getElementById("playas-chips");
+const $playasStats = document.getElementById("playas-stats");
+
+function loadLeaflet(cb){
+  if(window.L){ leafletLoaded = true; cb(); return; }
+  const s = document.createElement("script");
+  s.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+  s.integrity = "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=";
+  s.crossOrigin = "";
+  s.onload = ()=>{ leafletLoaded = true; cb(); };
+  document.head.appendChild(s);
+}
+
+function initPlayas(){
+  if(playasInitialized){ if(playasMap) setTimeout(()=>playasMap.invalidateSize(),200); return; }
+  playasInitialized = true;
+  // chips de comunidades
+  const comunidades = [...new Set(PLAYAS.map(p=>p.comunidad))].sort();
+  const allBtn = document.createElement("button");
+  allBtn.className = "chip active"; allBtn.textContent = "Todas";
+  allBtn.onclick = ()=>setComunidad("", allBtn);
+  $playasChips.appendChild(allBtn);
+  comunidades.forEach(c=>{
+    const b = document.createElement("button");
+    b.className = "chip"; b.textContent = c;
+    b.onclick = ()=>setComunidad(c, b);
+    $playasChips.appendChild(b);
+  });
+  $playasSearch.addEventListener("input", ()=>renderPlayas());
+  injectPlayasJsonLd();
+  loadLeaflet(()=>{
+    playasMap = L.map("playas-map", {scrollWheelZoom:false}).setView([40.0, -3.5], 5);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:'© OpenStreetMap', maxZoom:18
+    }).addTo(playasMap);
+    renderPlayas();
+    setTimeout(()=>playasMap.invalidateSize(), 250);
+  });
+}
+
+function setComunidad(c, btn){
+  playasFiltroComunidad = c;
+  document.querySelectorAll("#playas-chips .chip").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  track('playas_filtro_comunidad',{comunidad:c||"todas"});
+  renderPlayas();
+}
+
+function renderPlayas(){
+  const q = normalize($playasSearch.value);
+  const filtered = PLAYAS.filter(p=>{
+    if(playasFiltroComunidad && p.comunidad !== playasFiltroComunidad) return false;
+    if(!q) return true;
+    // FIX: buscar también en provincia, comunidad y descripción (antes solo en nombre)
+    const hay = normalize(`${p.nombre} ${p.provincia} ${p.comunidad} ${p.desc}`);
+    return hay.includes(q);
+  });
+  $playasStats.textContent = `${filtered.length} playas encontradas${playasFiltroComunidad?` en ${playasFiltroComunidad}`:""} · ${PLAYAS.length} en total`;
+
+  // markers
+  if(playasMap){
+    playasMarkers.forEach(m=>playasMap.removeLayer(m));
+    playasMarkers = [];
+    filtered.forEach(p=>{
+      const m = L.marker([p.lat,p.lng]).addTo(playasMap)
+        .bindPopup(`<strong>${p.nombre}</strong><br>${p.provincia} · ${p.comunidad}<br><em>${p.temporada}</em><br>${p.desc}`);
+      playasMarkers.push(m);
+    });
+    if(filtered.length>0 && (q || playasFiltroComunidad)){
+      const grp = L.featureGroup(playasMarkers);
+      try{ playasMap.fitBounds(grp.getBounds().pad(0.2)); }catch(e){}
+    }
+  }
+
+  // grid
+  $playasGrid.innerHTML = filtered.map(p=>{
+    const tags = (p.servicios||[]).map(s=>`<span class="playa-tag">${s}</span>`).join("");
+    const temp = `<span class="playa-tag temp">${p.temporada}</span>`;
+    const gmaps = `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
+    return `<article class="playa-card">
+      <h3>${p.nombre}</h3>
+      <p class="playa-meta">📍 ${p.provincia} · ${p.comunidad}</p>
+      <p class="playa-desc">${p.desc}</p>
+      <div class="playa-tags">${temp}${tags}</div>
+      <a class="playa-link" href="${gmaps}" target="_blank" rel="noopener" onclick="track('playa_maps_click',{playa:'${p.nombre.replace(/'/g,"")}'})">Ver en Google Maps →</a>
+    </article>`;
+  }).join("") || '<p class="hint">No hay playas que coincidan con tu búsqueda.</p>';
+}
+
+function injectPlayasJsonLd(){
+  const data = {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"Playas para perros en España",
+    "numberOfItems":PLAYAS.length,
+    "itemListElement":PLAYAS.map((p,i)=>({
+      "@type":"ListItem","position":i+1,
+      "item":{
+        "@type":"TouristAttraction",
+        "name":p.nombre,
+        "description":p.desc,
+        "isAccessibleForFree":true,
+        "publicAccess":true,
+        "geo":{"@type":"GeoCoordinates","latitude":p.lat,"longitude":p.lng},
+        "address":{"@type":"PostalAddress","addressRegion":p.comunidad,"addressLocality":p.provincia,"addressCountry":"ES"}
+      }
+    }))
+  };
+  document.getElementById("playas-jsonld").textContent = JSON.stringify(data);
+}
+
+// AdSense activation
 if (window.ADSENSE_ACTIVE) {
   try{
     document.querySelectorAll("ins.adsbygoogle").forEach(()=>{
